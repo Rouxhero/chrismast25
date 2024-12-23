@@ -1,7 +1,7 @@
 window.addEventListener('load', function () {
     // Récupération de la date actuelle
     const date = new Date();
-    const eventDate = new Date('2024-12-23T00:00:00');
+    const eventDate = new Date('2024-12-25T00:00:00');
     const diff = eventDate - date;
 
     if (diff > 0) {
@@ -15,7 +15,7 @@ window.addEventListener('load', function () {
 // Mise à jour du compte à rebours
 function updateCountdown() {
     const date = new Date();
-    const eventDate = new Date('2024-12-23T00:00:00');
+    const eventDate = new Date('2024-12-25T00:00:00');
     const diff = eventDate - date;
 
     if (diff <= 0) {
