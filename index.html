@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surprise de Noël</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="countdown-container" class="active">
+        <div id="flying-trees"></div>
+        <h1>Surprise en préparation 🎁</h1>
+        <p>Rendez-vous le <strong>25 décembre à 00h00</strong> pour découvrir le programme !</p>
+        <p>Prepare toi pour la periode du  <strong>30 janvier</strong> au <strong>1 fevrier</strong>.</p>
+        <div id="countdown"></div>
+    </div>
+
+    <div id="slides-container" class="hidden">
+        <!-- Slide 1 : Airbnb -->
+        <div class="slide" id="airbnb-slide">
+            <h1>Destination : Chartres</h1>
+            <p>Nous avons réservé un Airbnb pour 2 jours dans ce magnifique village !</p>
+            <img src="chartres.jpg" alt="Chartres" class="slide-image">
+        </div>
+
+        <!-- Slide 2 : Concert -->
+        <div class="slide" id="concert-slide">
+            <h1>Concert : Zaho de Sagazan</h1>
+            <p>Prépare-toi pour une soirée inoubliable le 30 janvier !</p>
+            <audio controls autoplay loop>
+                <source src="zaho_track.mp3" type="audio/mpeg">
+                Ton navigateur ne supporte pas l'audio.
+            </audio>
+        </div>
+
+        <!-- Slide 3 : Récap -->
+        <div class="slide" id="recap-slide">
+            <h1>Récapitulatif</h1>
+            <p><a href="lien_airbnb" target="_blank">Lien de l'Airbnb</a></p>
+            <p><a href="lien_billet" target="_blank">Billets pour Zaho de Sagazan</a></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
