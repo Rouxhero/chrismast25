@@ -29,21 +29,36 @@
             <div id="countdown"></div>
         </div>
         <div id="wrapped-container" class="hidden">
-            <div class="slide">
-                <h2>Direction Chartres 😬</h2>
-                <div class="gallery">
-                    <img src="r1.avif" alt="Airbnb extérieur">
-                    <img src="r2.avif" alt="Salon Airbnb">
-                    <img src="r3.avif" alt="Chambre Airbnb">
-                </div>
-                <p> Mais pourquoi ? 🤨</p>
-                <img src="bg.jpg" alt="Airbnb à Chartres" />
+            <div id="control">
+                <span id="control-pause">⏸️</span>
+                <span id="control-play" class="hidden">▶️</span>
             </div>
             <div class="slide">
-                <h2>Pour le concert de Zaho de Sagazan 🎤</h2>
-                <p>Prépare-toi pour une soirée mémorable !</p>
+                <h2>Apres  171 jours.</h2>
+                <p>Soit aussi 5 mois et 18 jours ...</p>
+            </div>
+            <div class="slide">
+                <h2>Des tentative deseperé</h2>
+                <p>Mais qui ont parfois marché ...</p>
+            </div>
+            <div class="slide">
+                <h2>Direction Chartres</h2>
+                <p> Mais pourquoi ?</p>
+            </div>
+            <div class="slide">
+                <h2>Allons voir une personne</h2>
+                <p>Qui te fait rever par ses textes</p>
+            </div>
+            <div class="slide">
+                <h2>Zaho de Sagazan </h2>
+                <p>Prépare-toi pour son concert 🎤</p>
                 <img src="zaho.webp" alt="Concert Zaho de Sagazan" />
                 <audio id="background-music" src="zaho-song.mp3" loop></audio>
+            </div>
+            <div class="slide">
+                <h2>Et apres ?</h2>
+                <p>2 jours pour profiter ensemble de Chartres </p>
+                <img src="bg.jpg" alt="Airbnb à Chartres" />
             </div>
             <div class="slide">
                 <h2>Récapitulatif 📋</h2>
@@ -51,14 +66,14 @@
                 <p>🎫 <a href="zaho-ticket.jpg" target="_blank">Ticket concert</a></p>
             </div>
         </div>
-        
+
     </div>
     <script>
         document.addEventListener("DOMContentLoaded", (event) => {
-         gsap.registerPlugin(Flip,EaselPlugin,SlowMo)
+            gsap.registerPlugin(Flip, EaselPlugin, SlowMo)
         });
-       
-       </script>
+
+    </script>
     <script src="script.js"></script>
 </body>
 
