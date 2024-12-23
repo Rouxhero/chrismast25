@@ -74,19 +74,29 @@ function showChartresSlide() {
     );
 }
 
-// Gestion des slides
 $(document).ready(function () {
     const slides = $('.slide');
     let currentSlide = 0;
     let slideInterval;
+    const slideDuration = 5000; // Durée de chaque slide en ms
 
     function showSlide(index) {
-        if (currentSlide === 1) {
-            showChartresSlide();
-        }
-
         slides.each((i, slide) => {
-            $(slide).css('display', i === index ? 'flex' : 'none');
+            if (i === index) {
+                $(slide).css('display', 'flex');
+                // Add a random color background radian
+                const randomColor = Math.floor(Math.random() * 16777215).toString(16);
+                const randomColor2 = Math.floor(Math.random() * 16777215).toString(16);
+                $(slide).css('background', `linear-gradient(45deg, #${randomColor}, #${randomColor2})`);
+                // Make appear the <p> after 2 sec
+                setTimeout(() => {
+                    $(slide).find('p').css('opacity', '1');
+                }, 1000);
+                animateProgressBar(slide);
+            } else {
+                $(slide).css('display', 'none');
+                resetProgressBar(slide);
+            }
         });
 
         gsap.fromTo(
@@ -111,21 +121,39 @@ $(document).ready(function () {
     }
 
     function startSlideShow() {
-        slideInterval = setInterval(nextSlide, 8000);
+        slideInterval = setInterval(nextSlide, slideDuration);
         const audio = $(slides[currentSlide]).find('audio')[0];
         if (audio) audio.play();
     }
 
     function stopSlideShow() {
+        
+        resetProgressBar($('.slide')[currentSlide]);
         clearInterval(slideInterval);
         const audio = $(slides[currentSlide]).find('audio')[0];
         if (audio) audio.pause();
     }
 
+    function animateProgressBar(slide) {
+        const progressBar = $(slide).find('.progress-bar');
+        gsap.fromTo(
+            progressBar,
+            { width: '0%' },
+            { width: '100%', duration: slideDuration / 1000, ease: 'linear' }
+        );
+    }
+
+    function resetProgressBar(slide) {
+        const progressBar = $(slide).find('.progress-bar');
+        gsap.set(progressBar, { width: '0%' });
+    }
+
+    // Gestion des boutons de contrôle
     $('#control-pause').click(function () {
         $(this).hide();
         $('#control-play').show();
         stopSlideShow();
+
     });
 
     $('#control-play').click(function () {
